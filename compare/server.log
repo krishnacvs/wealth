@@ -1,0 +1,262 @@
+2022-09-29 15:20:11,772 INFO  [org.jboss.modules] (main) JBoss Modules version 1.8.6.Final-redhat-00001
+2022-09-29 15:20:12,180 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.5.Final-redhat-00001
+2022-09-29 15:20:12,193 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.2.Final-redhat-1
+2022-09-29 15:20:12,369 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0049: JBoss EAP 7.2.0.GA (WildFly Core 6.0.11.Final-redhat-00001) starting
+2022-09-29 15:20:12,370 DEBUG [org.jboss.as.config] (MSC service thread 1-1) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /apps/jbossas/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.302.b08-0.el8_4.x86_64/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.302.b08-0.el8_4.x86_64/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.302.b08-0.el8_4.x86_64/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 1.8.0_302-b08
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Red Hat, Inc.
+	java.vendor.url = https://www.redhat.com/
+	java.vendor.url.bug = https://bugzilla.redhat.com/enter_bug.cgi?product=Red%20Hat%20Enterprise%20Linux%208&component=java-1.8.0-openjdk
+	java.version = 1.8.0_302
+	java.vm.info = mixed mode
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Red Hat, Inc.
+	java.vm.version = 25.302-b08
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.home.dir = /apps/jbossas
+	jboss.host.name = xlphxif360napp3
+	jboss.modules.dir = /apps/jbossas/modules
+	jboss.modules.policy-permissions = true
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = xlphxif360napp3
+	jboss.qualified.host.name = xlphxif360napp3
+	jboss.server.base.dir = /apps/jbossas/standalone
+	jboss.server.config.dir = /apps/jbossas/standalone/configuration
+	jboss.server.data.dir = /apps/jbossas/standalone/data
+	jboss.server.deploy.dir = /apps/jbossas/standalone/data/content
+	jboss.server.log.dir = /apps/jbossas/standalone/log
+	jboss.server.name = xlphxif360napp3
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /apps/jbossas/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/apps/jbossas/standalone/configuration/logging.properties
+	module.path = /apps/jbossas/modules
+	org.jboss.boot.log.file = /apps/jbossas/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.18.0-372.19.1.el8_6.x86_64
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.302.b08-0.el8_4.x86_64/jre/lib/resources.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.302.b08-0.el8_4.x86_64/jre/lib/rt.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.302.b08-0.el8_4.x86_64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.302.b08-0.el8_4.x86_64/jre/lib/jsse.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.302.b08-0.el8_4.x86_64/jre/lib/jce.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.302.b08-0.el8_4.x86_64/jre/lib/charsets.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.302.b08-0.el8_4.x86_64/jre/lib/jfr.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.302.b08-0.el8_4.x86_64/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.302.b08-0.el8_4.x86_64/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /apps/jbossas/jboss-modules.jar -mp /apps/jbossas/modules org.jboss.as.standalone -Djboss.home.dir=/apps/jbossas -Djboss.server.base.dir=/apps/jbossas/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = US
+	user.dir = /apps/jbossas/bin
+	user.home = /home/t2aadmin
+	user.language = en
+	user.name = t2aadmin
+	user.timezone = Etc/UTC
+2022-09-29 15:20:12,371 DEBUG [org.jboss.as.config] (MSC service thread 1-1) VM Arguments: -D[Standalone] -verbose:gc -Xloggc:/apps/jbossas/standalone/log/gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=3M -XX:-TraceClassUnloading -Xms6144m -Xmx6144m -XX:MetaspaceSize=1024M -XX:MaxMetaspaceSize=2048m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Djboss.modules.policy-permissions=true -Dorg.jboss.boot.log.file=/apps/jbossas/standalone/log/server.log -Dlogging.configuration=file:/apps/jbossas/standalone/configuration/logging.properties 
+2022-09-29 15:20:13,736 INFO  [org.wildfly.security] (ServerService Thread Pool -- 20) ELY00001: WildFly Elytron version 1.6.1.Final-redhat-00001
+2022-09-29 15:20:14,747 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2022-09-29 15:20:14,877 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 34) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2022-09-29 15:20:15,244 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 17) WFLYDR0001: Content added at location /apps/jbossas/standalone/data/content/2b/51eb2a617feb042f2e510a414560764cb0b22f/content
+2022-09-29 15:20:15,405 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2022-09-29 15:20:15,463 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.6.5.Final-redhat-00001
+2022-09-29 15:20:15,485 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.6.5.Final-redhat-00001
+2022-09-29 15:20:15,594 INFO  [org.wildfly.extension.microprofile.config.smallrye._private] (ServerService Thread Pool -- 57) WFLYCONF0001: Activating WildFly MicroProfile Config Subsystem
+2022-09-29 15:20:15,643 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 68) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2022-09-29 15:20:15,661 INFO  [org.jboss.as.connector] (MSC service thread 1-4) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.11.Final-redhat-00001)
+2022-09-29 15:20:15,667 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 70) WFLYWS0002: Activating WebServices Extension
+2022-09-29 15:20:15,669 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 60) WFLYNAM0001: Activating Naming Subsystem
+2022-09-29 15:20:15,737 INFO  [org.wildfly.extension.microprofile.opentracing] (ServerService Thread Pool -- 59) WFLYTRACEXT0001: Activating MicroProfile OpenTracing Subsystem
+2022-09-29 15:20:15,769 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 48) WFLYCLINF0001: Activating Infinispan subsystem.
+2022-09-29 15:20:15,774 INFO  [org.wildfly.extension.microprofile.health.smallrye] (ServerService Thread Pool -- 58) WFLYHEALTH0001: Activating Eclipse MicroProfile Health Subsystem
+2022-09-29 15:20:15,768 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2022-09-29 15:20:15,792 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 66) WFLYSEC0002: Activating Security Subsystem
+2022-09-29 15:20:15,798 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 50) WFLYRS0016: RESTEasy version 3.6.1.SP2-redhat-00001
+2022-09-29 15:20:15,805 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 55) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2022-09-29 15:20:15,888 INFO  [org.jboss.remoting] (MSC service thread 1-2) JBoss Remoting version 5.0.8.Final-redhat-1
+2022-09-29 15:20:15,896 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 49) WFLYIO001: Worker 'default' has auto-configured to 4 core threads with 32 task threads based on your 2 available processors
+2022-09-29 15:20:16,001 INFO  [org.jboss.as.security] (MSC service thread 1-2) WFLYSEC0001: Current PicketBox version=5.0.3.Final-redhat-3
+2022-09-29 15:20:16,011 INFO  [org.jboss.as.naming] (MSC service thread 1-4) WFLYNAM0003: Starting Naming Service
+2022-09-29 15:20:16,110 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2022-09-29 15:20:16,271 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 41) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+2022-09-29 15:20:16,277 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0003: Undertow 2.0.15.Final-redhat-00001 starting
+2022-09-29 15:20:16,498 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 8 (per class), which is derived from the number of CPUs on this host.
+2022-09-29 15:20:16,502 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 32 (per class), which is derived from thread worker pool sizing.
+2022-09-29 15:20:16,533 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = h2
+2022-09-29 15:20:16,759 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2022-09-29 15:20:16,759 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0099: Unbound non-transactional data source: java:jboss/datasources/StagingDBModel
+2022-09-29 15:20:16,760 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0010: Unbound data source [java:jboss/datasources/QQAppRead]
+2022-09-29 15:20:16,760 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0010: Unbound data source [java:jboss/datasources/ReportDS]
+2022-09-29 15:20:16,760 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0010: Unbound data source [java:jboss/datasources/QQAppUpdate]
+2022-09-29 15:20:16,760 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0010: Unbound data source [java:jboss/datasources/DemoAuth]
+2022-09-29 15:20:16,761 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0010: Unbound data source [java:jboss/datasources/AuthDBModel]
+2022-09-29 15:20:16,789 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 69) WFLYUT0014: Creating file handler for path '/apps/jbossas/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2022-09-29 15:20:16,840 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0012: Started server default-server.
+2022-09-29 15:20:16,883 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0018: Host default-host starting
+2022-09-29 15:20:17,155 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0006: Undertow HTTP listener default listening on 10.107.27.39:8080
+2022-09-29 15:20:17,218 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0493: EJB subsystem suspension complete
+2022-09-29 15:20:17,427 INFO  [org.jboss.as.patching] (MSC service thread 1-3) WFLYPAT0050: JBoss EAP cumulative patch ID is: base, one-off patches include: none
+2022-09-29 15:20:17,487 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-3) WFLYDM0111: Keystore /apps/jbossas/standalone/configuration/application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+2022-09-29 15:20:17,513 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2022-09-29 15:20:17,554 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) WFLYDS0013: Started FileSystemDeploymentService for directory /apps/jbossas/standalone/deployments
+2022-09-29 15:20:17,583 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "DownstreamWS-0.0.1.war" (runtime-name: "DownstreamWS-0.0.1.war")
+2022-09-29 15:20:17,587 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "ojdbc7.jar" (runtime-name: "ojdbc7.jar")
+2022-09-29 15:20:17,593 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "PWUserAuthorization.war" (runtime-name: "PWUserAuthorization.war")
+2022-09-29 15:20:17,838 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTPS listener https listening on 10.107.27.39:8443
+2022-09-29 15:20:18,071 INFO  [org.jboss.ws.common.management] (MSC service thread 1-4) JBWS022052: Starting JBossWS 5.2.4.Final-redhat-00001 (Apache CXF 3.2.5.redhat-00001) 
+2022-09-29 15:20:19,407 INFO  [org.jboss.as.jpa] (MSC service thread 1-4) WFLYJPA0002: Read persistence.xml for PWUserAuthorization
+2022-09-29 15:20:19,614 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0059: Class Path entry jaxb-api.jar in /content/DownstreamWS-0.0.1.war/WEB-INF/lib/jaxb-impl-2.1.9.jar  does not point to a valid jar for a Class-Path reference.
+2022-09-29 15:20:19,615 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0059: Class Path entry activation.jar in /content/DownstreamWS-0.0.1.war/WEB-INF/lib/jaxb-impl-2.1.9.jar  does not point to a valid jar for a Class-Path reference.
+2022-09-29 15:20:19,615 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0059: Class Path entry jsr173_1.0_api.jar in /content/DownstreamWS-0.0.1.war/WEB-INF/lib/jaxb-impl-2.1.9.jar  does not point to a valid jar for a Class-Path reference.
+2022-09-29 15:20:19,615 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0059: Class Path entry jaxb1-impl.jar in /content/DownstreamWS-0.0.1.war/WEB-INF/lib/jaxb-impl-2.1.9.jar  does not point to a valid jar for a Class-Path reference.
+2022-09-29 15:20:19,634 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0059: Class Path entry jaxp-api.jar in /content/DownstreamWS-0.0.1.war/WEB-INF/lib/saaj-api-1.3.jar  does not point to a valid jar for a Class-Path reference.
+2022-09-29 15:20:19,634 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0059: Class Path entry jax-qname.jar in /content/DownstreamWS-0.0.1.war/WEB-INF/lib/saaj-api-1.3.jar  does not point to a valid jar for a Class-Path reference.
+2022-09-29 15:20:19,634 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0059: Class Path entry activation.jar in /content/DownstreamWS-0.0.1.war/WEB-INF/lib/saaj-api-1.3.jar  does not point to a valid jar for a Class-Path reference.
+2022-09-29 15:20:19,634 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0059: Class Path entry servlet.jar in /content/DownstreamWS-0.0.1.war/WEB-INF/lib/saaj-api-1.3.jar  does not point to a valid jar for a Class-Path reference.
+2022-09-29 15:20:19,832 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-2) MSC000001: Failed to start service jboss.deployment.unit."DownstreamWS-0.0.1.war".PARSE: org.jboss.msc.service.StartException in service jboss.deployment.unit."DownstreamWS-0.0.1.war".PARSE: WFLYSRV0153: Failed to process phase PARSE of deployment "DownstreamWS-0.0.1.war"
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:151)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1738)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.execute(ServiceControllerImpl.java:1700)
+	at org.jboss.msc.service.ServiceControllerImpl$ControllerTask.run(ServiceControllerImpl.java:1558)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1985)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1487)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1364)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYWS0059: Apache CXF library (cxf-common-utilities-2.2.jar) detected in ws endpoint deployment; either provide a proper deployment replacing embedded libraries with container module dependencies or disable the webservices subsystem for the current deployment adding a proper jboss-deployment-structure.xml descriptor to it. The former approach is recommended, as the latter approach causes most of the webservices Java EE and any JBossWS specific functionality to be disabled.
+	at org.jboss.as.webservices.deployers.WSLibraryFilterProcessor.deploy(WSLibraryFilterProcessor.java:70)
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:144)
+	... 8 more
+
+2022-09-29 15:20:19,916 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment PWUserAuthorization.war
+2022-09-29 15:20:19,967 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0004: Deploying JDBC-compliant driver class oracle.jdbc.OracleDriver (version 12.1)
+2022-09-29 15:20:20,025 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = ojdbc7.jar
+2022-09-29 15:20:20,282 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0001: Bound data source [java:jboss/datasources/DemoAuth]
+2022-09-29 15:20:20,282 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0098: Bound non-transactional data source: java:jboss/datasources/StagingDBModel
+2022-09-29 15:20:20,282 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0001: Bound data source [java:jboss/datasources/ReportDS]
+2022-09-29 15:20:20,282 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0001: Bound data source [java:jboss/datasources/QQAppRead]
+2022-09-29 15:20:20,283 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0001: Bound data source [java:jboss/datasources/QQAppUpdate]
+2022-09-29 15:20:20,283 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0001: Bound data source [java:jboss/datasources/AuthDBModel]
+2022-09-29 15:20:20,386 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-3) HV000001: Hibernate Validator 6.0.14.Final-redhat-00001
+2022-09-29 15:20:20,828 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'AuthProcessingImpl' in deployment unit 'deployment "PWUserAuthorization.war"' are as follows:
+
+	java:global/PWUserAuthorization/AuthProcessingImpl!com.cgi.bsod.isg.if360.userlist.services.AuthProcessing
+	java:app/PWUserAuthorization/AuthProcessingImpl!com.cgi.bsod.isg.if360.userlist.services.AuthProcessing
+	java:module/AuthProcessingImpl!com.cgi.bsod.isg.if360.userlist.services.AuthProcessing
+	ejb:PWUserAuthorization/AuthProcessingImpl!com.cgi.bsod.isg.if360.userlist.services.AuthProcessing
+	java:global/PWUserAuthorization/AuthProcessingImpl
+	java:app/PWUserAuthorization/AuthProcessingImpl
+	java:module/AuthProcessingImpl
+
+2022-09-29 15:20:20,858 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-2) ISPN000128: Infinispan version: Infinispan 'Estrella Galicia' 9.3.3.Final-redhat-00001
+2022-09-29 15:20:20,972 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 73) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'PWUserAuthorization.war#PWUserAuthorization'
+2022-09-29 15:20:21,015 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 73) HHH000204: Processing PersistenceUnitInfo [
+	name: PWUserAuthorization
+	...]
+2022-09-29 15:20:21,221 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 73) HHH000412: Hibernate Core {5.3.7.Final-redhat-00001}
+2022-09-29 15:20:21,223 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 73) HHH000206: hibernate.properties not found
+2022-09-29 15:20:21,482 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 72) WFLYCLINF0002: Started client-mappings cache from ejb container
+2022-09-29 15:20:21,586 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 73) HCANN000001: Hibernate Commons Annotations {5.0.4.Final-redhat-00001}
+2022-09-29 15:20:21,823 INFO  [org.jboss.weld.Version] (MSC service thread 1-3) WELD-000900: 3.0.5 (redhat)
+2022-09-29 15:20:21,921 INFO  [org.jboss.ws.cxf.metadata] (MSC service thread 1-3) JBWS024061: Adding service endpoint metadata: id=com.cgi.bsod.isg.if360.userlist.webservices.UserlistWS
+ address=http://10.107.27.39:8080/PWUserAuthorization/PWUserAuthorizationService
+ implementor=com.cgi.bsod.isg.if360.userlist.webservices.UserlistWS
+ serviceName={http://adaptik.com/pwwebservice/pwauthorization/schemas}PWUserAuthorizationService
+ portName={http://adaptik.com/pwwebservice/pwauthorization/schemas}PWUserAuthorizationSoap11
+ annotationWsdlLocation=WEB-INF/wsdl/PWUserAuthorizationService.wsdl
+ wsdlLocationOverride=null
+ mtomEnabled=false
+2022-09-29 15:20:23,273 INFO  [org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] (MSC service thread 1-3) Creating Service {http://adaptik.com/pwwebservice/pwauthorization/schemas}PWUserAuthorizationService from WSDL: WEB-INF/wsdl/PWUserAuthorizationService.wsdl
+2022-09-29 15:20:23,692 INFO  [org.apache.cxf.endpoint.ServerImpl] (MSC service thread 1-3) Setting the server's publish address to be http://10.107.27.39:8080/PWUserAuthorization/PWUserAuthorizationService
+2022-09-29 15:20:23,756 INFO  [org.jboss.ws.cxf.deployment] (MSC service thread 1-3) JBWS024074: WSDL published to: file:/apps/jbossas/standalone/data/wsdl/PWUserAuthorization.war/PWUserAuthorizationService.wsdl
+2022-09-29 15:20:23,821 INFO  [org.jboss.as.webservices] (MSC service thread 1-2) WFLYWS0003: Starting service jboss.ws.endpoint."PWUserAuthorization.war"."com.cgi.bsod.isg.if360.userlist.webservices.UserlistWS"
+2022-09-29 15:20:24,069 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 73) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'PWUserAuthorization.war#PWUserAuthorization'
+2022-09-29 15:20:24,434 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 73) HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2022-09-29 15:20:24,443 WARN  [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator] (ServerService Thread Pool -- 73) HHH000342: Could not obtain connection to query metadata : Unable to determine Dialect to use [name=Oracle, majorVersion=19]; user must register resolver or explicitly set 'hibernate.dialect'
+2022-09-29 15:20:24,445 ERROR [org.jboss.msc.service.fail] (ServerService Thread Pool -- 73) MSC000001: Failed to start service jboss.persistenceunit."PWUserAuthorization.war#PWUserAuthorization": org.jboss.msc.service.StartException in service jboss.persistenceunit."PWUserAuthorization.war#PWUserAuthorization": org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:195)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:125)
+	at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:650)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1.run(PersistenceUnitServiceImpl.java:209)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1985)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1487)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1378)
+	at java.lang.Thread.run(Thread.java:748)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:485)
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:275)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:179)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:119)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:904)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935)
+	at org.jboss.as.jpa.hibernate5.TwoPhaseBootstrapImpl.build(TwoPhaseBootstrapImpl.java:44)
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:167)
+	... 9 more
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:137)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:94)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	... 21 more
+
+2022-09-29 15:20:24,452 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" => "DownstreamWS-0.0.1.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.deployment.unit.\"DownstreamWS-0.0.1.war\".PARSE" => "WFLYSRV0153: Failed to process phase PARSE of deployment \"DownstreamWS-0.0.1.war\"
+    Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: WFLYWS0059: Apache CXF library (cxf-common-utilities-2.2.jar) detected in ws endpoint deployment; either provide a proper deployment replacing embedded libraries with container module dependencies or disable the webservices subsystem for the current deployment adding a proper jboss-deployment-structure.xml descriptor to it. The former approach is recommended, as the latter approach causes most of the webservices Java EE and any JBossWS specific functionality to be disabled."}}
+2022-09-29 15:20:24,453 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" => "PWUserAuthorization.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.persistenceunit.\"PWUserAuthorization.war#PWUserAuthorization\"" => "org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+    Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+    Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set"}}
+2022-09-29 15:20:24,479 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 42) WFLYSRV0010: Deployed "ojdbc7.jar" (runtime-name : "ojdbc7.jar")
+2022-09-29 15:20:24,479 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 42) WFLYSRV0010: Deployed "PWUserAuthorization.war" (runtime-name : "PWUserAuthorization.war")
+2022-09-29 15:20:24,480 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 42) WFLYSRV0010: Deployed "DownstreamWS-0.0.1.war" (runtime-name : "DownstreamWS-0.0.1.war")
+2022-09-29 15:20:24,483 INFO  [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.persistenceunit."PWUserAuthorization.war#PWUserAuthorization": org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+      service jboss.deployment.unit."DownstreamWS-0.0.1.war".PARSE: WFLYSRV0153: Failed to process phase PARSE of deployment "DownstreamWS-0.0.1.war"
+WFLYCTL0448: 20 additional services are down due to their dependencies being missing or failed
+2022-09-29 15:20:24,636 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2022-09-29 15:20:24,639 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://10.107.27.39:9990/management
+2022-09-29 15:20:24,639 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://10.107.27.39:9990
+2022-09-29 15:20:24,639 ERROR [org.jboss.as] (Controller Boot Thread) WFLYSRV0026: JBoss EAP 7.2.0.GA (WildFly Core 6.0.11.Final-redhat-00001) started (with errors) in 13390ms - Started 605 of 805 services (26 services failed or missing dependencies, 335 services are lazy, passive or on-demand)
+2022-09-29 15:30:12,829 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 74) WFLYDR0009: Content /apps/jbossas/standalone/data/content/82/33e70e6c6d2ad7fe1736a9377b0b8057e0f357 is obsolete and will be removed
+2022-09-29 15:30:12,835 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 74) WFLYDR0002: Content removed from location /apps/jbossas/standalone/data/content/82/33e70e6c6d2ad7fe1736a9377b0b8057e0f357/content
+2022-09-29 15:30:12,835 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 74) WFLYDR0009: Content /apps/jbossas/standalone/data/content/33/9a9254b9e37e617b5523465d82327546e93889 is obsolete and will be removed
+2022-09-29 15:30:12,836 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 74) WFLYDR0002: Content removed from location /apps/jbossas/standalone/data/content/33/9a9254b9e37e617b5523465d82327546e93889/content
+2022-09-29 15:30:12,836 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 74) WFLYDR0009: Content /apps/jbossas/standalone/data/content/e8/19ba263cb7bc58aba3419e03ec24ac5ac6b965 is obsolete and will be removed
+2022-09-29 15:30:12,839 INFO  [org.jboss.as.repository] (ServerService Thread Pool -- 74) WFLYDR0002: Content removed from location /apps/jbossas/standalone/data/content/e8/19ba263cb7bc58aba3419e03ec24ac5ac6b965/content
+2022-09-29 16:45:27,590 INFO  [org.jboss.as.controller] (management-handler-thread - 2) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.persistenceunit."PWUserAuthorization.war#PWUserAuthorization": org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+      service jboss.deployment.unit."DownstreamWS-0.0.1.war".PARSE: WFLYSRV0153: Failed to process phase PARSE of deployment "DownstreamWS-0.0.1.war"
+

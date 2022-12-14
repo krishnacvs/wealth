@@ -1,0 +1,545 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<server xmlns="urn:jboss:domain:1.8">
+
+    <extensions>
+        <extension module="org.jboss.as.clustering.infinispan"/>
+        <extension module="org.jboss.as.connector"/>
+        <extension module="org.jboss.as.deployment-scanner"/>
+        <extension module="org.jboss.as.ee"/>
+        <extension module="org.jboss.as.ejb3"/>
+        <extension module="org.jboss.as.jaxrs"/>
+        <extension module="org.jboss.as.jdr"/>
+        <extension module="org.jboss.as.jmx"/>
+        <extension module="org.jboss.as.jpa"/>
+        <extension module="org.jboss.as.jsf"/>
+        <extension module="org.jboss.as.logging"/>
+        <extension module="org.jboss.as.mail"/>
+        <extension module="org.jboss.as.naming"/>
+        <extension module="org.jboss.as.pojo"/>
+        <extension module="org.jboss.as.remoting"/>
+        <extension module="org.jboss.as.sar"/>
+        <extension module="org.jboss.as.security"/>
+        <extension module="org.jboss.as.threads"/>
+        <extension module="org.jboss.as.transactions"/>
+        <extension module="org.jboss.as.web"/>
+        <extension module="org.jboss.as.webservices"/>
+        <extension module="org.jboss.as.weld"/>
+    </extensions>
+
+    <system-properties>
+        <property name="pw.host.name" value="10.107.27.38"/>
+        <property name="pw.host.port" value="8080"/>
+        <property name="db.host.name" value="10.105.9.114"/>
+        <property name="db.host.port" value="1525"/>
+        <property name="db.host.sid" value="iodev"/>
+        <property name="db.host.driver" value="ojdbc7.jar"/>
+        <property name="host.log.directory" value="/apps/jbossas/jbossas/standalone/log"/>
+        <property name="pw.external.dir" value="/apps/xsl"/>
+        <property name="pw.batch" value="on"/>
+        <property name="pw.messaging" value="off"/>
+        <property name="pw.emailing" value="off"/>
+        <property name="https.protocols" value="TLSv1,TLSv1.1,TLSv1.2"/>
+        <property name="Log4jContextSelector" value="com.adaptik.log.AdaptikContextSelector"/>
+        <property name="melFileLocalFileLocation" value="/apps/mel/files"/>
+        <property name="melFileRemoteFileLocation" value="./"/>
+        <property name="melFileFTPHost" value="server.example.com"/>
+        <property name="melFileFTPPort" value="22"/>
+        <property name="melFileFTPUser" value="username"/>
+        <property name="melFileFTPPwd" value="password"/>
+        <property name="pw.bulk.dir" value="/apps/mcdonalds/datafiles"/>
+    </system-properties>
+
+
+    <management>
+        <security-realms>
+            <security-realm name="ManagementRealm">
+                <authentication>
+                    <local default-user="$local"/>
+                    <properties path="mgmt-users.properties" relative-to="jboss.server.config.dir"/>
+                </authentication>
+            </security-realm>
+            <security-realm name="ApplicationRealm">
+                <authentication>
+                    <local default-user="$local" allowed-users="*"/>
+                    <properties path="application-users.properties" relative-to="jboss.server.config.dir"/>
+                </authentication>
+                <authorization>
+                    <properties path="application-roles.properties" relative-to="jboss.server.config.dir"/>
+                </authorization>
+            </security-realm>
+        </security-realms>
+        <management-interfaces>
+            <native-interface security-realm="ManagementRealm">
+                <socket-binding native="management-native"/>
+            </native-interface>
+            <http-interface security-realm="ManagementRealm">
+                <socket-binding http="management-http"/>
+            </http-interface>
+        </management-interfaces>
+        <access-control>
+            <role-mapping>
+                <role name="Administrator">
+                    <include>
+                        <user name="surendra"/>
+                    </include>
+                </role>
+                <role name="Auditor">
+                    <include>
+                        <user name="surendra"/>
+                    </include>
+                </role>
+                <role name="Deployer">
+                    <include>
+                        <user name="surendra"/>
+                    </include>
+                </role>
+                <role name="SuperUser">
+                    <include>
+                        <user name="surendra"/>
+                    </include>
+                </role>
+                <role name="Operator">
+                    <include>
+                        <user name="surendra"/>
+                    </include>
+                </role>
+                <role name="Monitor">
+                    <include>
+                        <user name="surendra"/>
+                    </include>
+                </role>
+                <role name="Maintainer">
+                    <include>
+                        <user name="surendra"/>
+                    </include>
+                </role>
+            </role-mapping>
+        </access-control>
+    </management>
+
+    <profile>
+        <subsystem xmlns="urn:jboss:domain:logging:1.5">
+            <console-handler name="CONSOLE">
+                <level name="INFO"/>
+                <formatter>
+                    <pattern-formatter pattern="%K{level}%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n"/>
+                </formatter>
+            </console-handler>
+            <periodic-rotating-file-handler name="FILE" autoflush="true">
+                <formatter>
+                    <pattern-formatter pattern="%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n"/>
+                </formatter>
+                <file relative-to="jboss.server.log.dir" path="server.log"/>
+                <suffix value=".yyyy-MM-dd"/>
+                <append value="true"/>
+            </periodic-rotating-file-handler>
+            <logger category="com.arjuna">
+                <level name="WARN"/>
+            </logger>
+            <logger category="org.apache.tomcat.util.modeler">
+                <level name="WARN"/>
+            </logger>
+            <logger category="org.jboss.as.config">
+                <level name="DEBUG"/>
+            </logger>
+            <logger category="sun.rmi">
+                <level name="WARN"/>
+            </logger>
+            <logger category="jacorb">
+                <level name="WARN"/>
+            </logger>
+            <logger category="jacorb.config">
+                <level name="ERROR"/>
+            </logger>
+            <root-logger>
+                <level name="INFO"/>
+                <handlers>
+                    <handler name="CONSOLE"/>
+                    <handler name="FILE"/>
+                </handlers>
+            </root-logger>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:datasources:1.2">
+            <datasources>
+                <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1</connection-url>
+                    <driver>h2</driver>
+                    <security>
+                        <user-name>sa</user-name>
+                        <password>sa</password>
+                    </security>
+                </datasource>
+                <datasource jta="false" jndi-name="java:jboss/datasources/StagingDBModel" pool-name="StagingDBModel" enabled="true" use-ccm="false">
+                    <connection-url>jdbc:oracle:thin:@${db.host.name}:${db.host.port}:${db.host.sid}</connection-url>
+                    <driver-class>oracle.jdbc.OracleDriver</driver-class>
+                    <driver>ojdbc7.jar</driver>
+                    <security>
+                        <user-name>starrsgdev</user-name>
+                        <password>analysis</password>
+                    </security>
+                    <validation>
+                        <validate-on-match>false</validate-on-match>
+                        <background-validation>false</background-validation>
+                        <background-validation-millis>1</background-validation-millis>
+                    </validation>
+                    <statement>
+                        <prepared-statement-cache-size>0</prepared-statement-cache-size>
+                        <share-prepared-statements>false</share-prepared-statements>
+                    </statement>
+                </datasource>
+                <datasource jndi-name="java:jboss/datasources/QQAppRead" pool-name="QQAppRead" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:oracle:thin:@${db.host.name}:${db.host.port}:${db.host.sid}</connection-url>
+                    <driver-class>oracle.jdbc.OracleDriver</driver-class>
+                    <driver>ojdbc7.jar</driver>
+                    <pool>
+                        <min-pool-size>1</min-pool-size>
+                        <max-pool-size>100</max-pool-size>
+                    </pool>
+                    <security>
+                        <user-name>starrpw4web</user-name>
+                        <password>web4starrpw</password>
+                    </security>
+                    <statement>
+                        <prepared-statement-cache-size>20</prepared-statement-cache-size>
+                    </statement>
+                </datasource>
+                <datasource jndi-name="java:jboss/datasources/ReportDS" pool-name="ReportDS" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:oracle:thin:@${db.host.name}:${db.host.port}:${db.host.sid}</connection-url>
+                    <driver-class>oracle.jdbc.OracleDriver</driver-class>
+                    <driver>ojdbc7.jar</driver>
+                    <pool>
+                        <min-pool-size>1</min-pool-size>
+                        <max-pool-size>100</max-pool-size>
+                    </pool>
+                    <security>
+                        <user-name>starrpw4web</user-name>
+                        <password>web4starrpw</password>
+                    </security>
+                    <statement>
+                        <prepared-statement-cache-size>20</prepared-statement-cache-size>
+                    </statement>
+                </datasource>
+                <datasource jndi-name="java:jboss/datasources/QQAppUpdate" pool-name="QQAppUpdate" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:oracle:thin:@${db.host.name}:${db.host.port}:${db.host.sid}</connection-url>
+                    <driver-class>oracle.jdbc.OracleDriver</driver-class>
+                    <driver>ojdbc7.jar</driver>
+                    <pool>
+                        <min-pool-size>1</min-pool-size>
+                        <max-pool-size>100</max-pool-size>
+                    </pool>
+                    <security>
+                        <user-name>starrpw4web</user-name>
+                        <password>web4starrpw</password>
+                    </security>
+                    <statement>
+                        <prepared-statement-cache-size>20</prepared-statement-cache-size>
+                    </statement>
+                </datasource>
+                <datasource jndi-name="java:jboss/datasources/DemoAuth" pool-name="DemoAuth" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:oracle:thin:@${db.host.name}:${db.host.port}:${db.host.sid}</connection-url>
+                    <driver-class>oracle.jdbc.OracleDriver</driver-class>
+                    <driver>ojdbc7.jar</driver>
+                    <pool>
+                        <min-pool-size>1</min-pool-size>
+                        <max-pool-size>100</max-pool-size>
+                    </pool>
+                    <security>
+                        <user-name>pwauth</user-name>
+                        <password>analysis</password>
+                    </security>
+                    <statement>
+                        <prepared-statement-cache-size>20</prepared-statement-cache-size>
+                    </statement>
+                </datasource>
+                <datasource jndi-name="java:jboss/datasources/AuthDBModel" pool-name="authdbmodel" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:oracle:thin:@${db.host.name}:${db.host.port}:${db.host.sid}</connection-url>
+                    <driver-class>oracle.jdbc.OracleDriver</driver-class>
+                    <driver>ojdbc7.jar</driver>
+                    <pool>
+                        <min-pool-size>1</min-pool-size>
+                        <max-pool-size>100</max-pool-size>
+                    </pool>
+                    <security>
+                        <user-name>pwauth</user-name>
+                        <password>analysis</password>
+                    </security>
+                    <statement>
+                        <prepared-statement-cache-size>20</prepared-statement-cache-size>
+                    </statement>
+                </datasource>
+                <drivers>
+                    <driver name="h2" module="com.h2database.h2">
+                        <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+                    </driver>
+                </drivers>
+            </datasources>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:deployment-scanner:1.1">
+            <deployment-scanner path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000"/>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:ee:1.2">
+            <spec-descriptor-property-replacement>false</spec-descriptor-property-replacement>
+            <jboss-descriptor-property-replacement>true</jboss-descriptor-property-replacement>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:ejb3:1.5">
+            <session-bean>
+                <stateless>
+                    <bean-instance-pool-ref pool-name="slsb-strict-max-pool"/>
+                </stateless>
+                <stateful default-access-timeout="5000" cache-ref="simple"/>
+                <singleton default-access-timeout="5000"/>
+            </session-bean>
+            <pools>
+                <bean-instance-pools>
+                    <strict-max-pool name="slsb-strict-max-pool" max-pool-size="20" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
+                    <strict-max-pool name="mdb-strict-max-pool" max-pool-size="20" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
+                </bean-instance-pools>
+            </pools>
+            <caches>
+                <cache name="simple" aliases="NoPassivationCache"/>
+                <cache name="passivating" passivation-store-ref="file" aliases="SimpleStatefulCache"/>
+            </caches>
+            <passivation-stores>
+                <file-passivation-store name="file"/>
+            </passivation-stores>
+            <async thread-pool-name="default"/>
+            <timer-service thread-pool-name="default" default-data-store="default-file-store">
+                <data-stores>
+                    <file-data-store name="default-file-store" path="timer-service-data" relative-to="jboss.server.data.dir"/>
+                </data-stores>
+            </timer-service>
+            <remote connector-ref="remoting-connector" thread-pool-name="default"/>
+            <thread-pools>
+                <thread-pool name="default">
+                    <max-threads count="10"/>
+                    <keepalive-time time="100" unit="milliseconds"/>
+                </thread-pool>
+            </thread-pools>
+            <default-security-domain value="other"/>
+            <default-missing-method-permissions-deny-access value="true"/>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:infinispan:1.5">
+            <cache-container name="web" aliases="standard-session-cache" default-cache="local-web" module="org.jboss.as.clustering.web.infinispan" statistics-enabled="true">
+                <local-cache name="local-web" batching="true" statistics-enabled="true">
+                    <file-store passivation="false" purge="false"/>
+                </local-cache>
+            </cache-container>
+            <cache-container name="hibernate" default-cache="local-query" module="org.jboss.as.jpa.hibernate:4" statistics-enabled="true">
+                <local-cache name="entity" statistics-enabled="true">
+                    <transaction mode="NON_XA"/>
+                    <eviction strategy="LRU" max-entries="10000"/>
+                    <expiration max-idle="100000"/>
+                </local-cache>
+                <local-cache name="local-query" statistics-enabled="true">
+                    <transaction mode="NONE"/>
+                    <eviction strategy="LRU" max-entries="10000"/>
+                    <expiration max-idle="100000"/>
+                </local-cache>
+                <local-cache name="timestamps" statistics-enabled="true">
+                    <transaction mode="NONE"/>
+                    <eviction strategy="NONE"/>
+                </local-cache>
+            </cache-container>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:jaxrs:1.0"/>
+        <subsystem xmlns="urn:jboss:domain:jca:1.1">
+            <archive-validation enabled="true" fail-on-error="true" fail-on-warn="false"/>
+            <bean-validation enabled="true"/>
+            <default-workmanager>
+                <short-running-threads>
+                    <core-threads count="50"/>
+                    <queue-length count="50"/>
+                    <max-threads count="50"/>
+                    <keepalive-time time="10" unit="seconds"/>
+                </short-running-threads>
+                <long-running-threads>
+                    <core-threads count="50"/>
+                    <queue-length count="50"/>
+                    <max-threads count="50"/>
+                    <keepalive-time time="10" unit="seconds"/>
+                </long-running-threads>
+            </default-workmanager>
+            <cached-connection-manager/>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:jdr:1.0"/>
+        <subsystem xmlns="urn:jboss:domain:jmx:1.3">
+            <expose-resolved-model/>
+            <expose-expression-model/>
+            <remoting-connector/>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:jpa:1.1">
+            <jpa default-datasource="" default-extended-persistence-inheritance="DEEP"/>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:jsf:1.0"/>
+        <subsystem xmlns="urn:jboss:domain:mail:1.2">
+            <mail-session name="java:jboss/mail/Default" jndi-name="java:jboss/mail/Default">
+                <smtp-server outbound-socket-binding-ref="mail-smtp"/>
+            </mail-session>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:naming:1.4">
+            <bindings>
+                <simple name="java:jboss/naming/downstreamXMLpath" value="/apps/if360/wsfiles/"/>
+                <simple name="java:/url/AMEntryPoint" value="http://${pw.host.name}:${pw.host.port}/AMPolicyWriter/AMEntryPoint" type="java.net.URL"/>
+                <simple name="java:/url/AddCustomerExit" value="http://${pw.host.name}:${pw.host.port}/PWTestWebservicesPolicyWriter/extwebservice/addCustomerExitService" type="java.net.URL"/>
+                <simple name="java:/url/AddressChangeImpactService" value="http://${pw.host.name}:${pw.host.port}/PWTestWebservicesPolicyWriter/soapservices/AddressChangeImpactService" type="java.net.URL"/>
+                <simple name="java:/url/AddressScrubber" value="http://${pw.host.name}:${pw.host.port}/PWTestWebservicesPolicyWriter/extwebservice/addressScrubberService" type="java.net.URL"/>
+                <simple name="java:/url/CustomerRelationshipChangeExit" value="http://${pw.host.name}:${pw.host.port}/PWTestWebservicesPolicyWriter/extwebservice/CustomerRelationshipChangeExitService" type="java.net.URL"/>
+                <simple name="java:/url/TaskManager" value="http://${pw.host.name}:${pw.host.port}/TMPolicyWriter/soapservices/TMTaskService" type="java.net.URL"/>
+                <simple name="java:/url/adaptikPolicyService" value="http://${pw.host.name}:${pw.host.port}/AMPolicyWriter/soapservices/PWPolicyService" type="java.net.URL"/>
+                <simple name="java:/url/addressService" value="http://${pw.host.name}:${pw.host.port}/AMPolicyWriter/services/PWAddressService" type="java.net.URL"/>
+                <simple name="java:/url/customerService" value="http://${pw.host.name}:${pw.host.port}/AMPolicyWriter/services/PWCustomerService" type="java.net.URL"/>
+                <simple name="java:/url/documentProviderService" value="http://${pw.host.name}:${pw.host.port}/PWTestWebservicesPolicyWriter/soapservices/PWDocumentProviderService" type="java.net.URL"/>
+                <simple name="java:/url/emailUrlPrefix" value="http://${pw.host.name}:${pw.host.port}/AMPolicyWriter/PWEntryPoint" type="java.net.URL"/>
+                <simple name="java:/url/userAuthenticationService" value="http://${pw.host.name}:${pw.host.port}/PWTestWebservicesPolicyWriter/soapservices/PWBasicAuthenticationService" type="java.net.URL"/>
+                <simple name="java:/url/userAuthorization" value="http://${pw.host.name}:${pw.host.port}/PWUserAuthorization/PWUserAuthorizationService" type="java.net.URL"/>
+                <simple name="java:/url/LogDirectory" value="file:///${host.log.directory}" type="java.net.URL"/>
+                <simple name="java:/url/salesForceWSURL" value="https://starrcompanies--sf20uat.my.salesforce.com/services/Soap/c/43.0/" type="java.net.URL"/>
+                <simple name="java:/jndi/salesForceUserName" value="api.adaptik@starrcompanies.com.sf20uat" type="java.lang.String"/>
+                <simple name="java:/jndi/salesForcePassword" value="N0tWoneJok3!tTy6zPTO2kO9ODTM6BY0BoUz"/>
+                <simple name="java:/url/stageService" value="http://${pw.host.name}:${pw.host.port}/DownstreamWS/StageServiceImpl" type="java.net.URL"/>
+                <simple name="java:/jndi/XSLDirectory" value="${pw.external.dir}/AM/xsl" type="java.lang.String"/>
+                <simple name="java:/jndi/PropertiesDirectory" value="${pw.external.dir}/AM/properties/am" type="java.lang.String"/>
+                <simple name="java:/jboss/naming/openLDAPuser" value="zotWlaOk+lnyEF10oLm9j/rJ1r3XgQ/P/bigqu/39+U=" type="java.lang.String"/>
+                <simple name="java:/jboss/naming/openLDAPpass" value="47vjrOP8/RyKc9X1BoHjUA==" type="java.lang.String"/>
+                <simple name="java:/jboss/naming/openLDAPaddr" value="10.107.27.44" type="java.lang.String"/>
+                <simple name="java:/jboss/naming/openLDAPport" value="389" type="java.lang.String"/>
+                <simple name="java:jboss/naming/openLDAPsearchdn" value="pMurHlTHMRTp65t1qiiU3L7Z+M1lbQ8fawci//Eq2T14Wda3jK072mwh1lsNu8lC"/>
+                <simple name="java:jboss/naming/openLDAPbase" value="C0IXClLSixnBZlrjGalvK4GlI6CB8iCURYVaV5gyqIA="/>
+                <simple name="java:jboss/naming/openLDAPprotocol" value="3"/>
+                <simple name="java:jboss/naming/maxLoginAttempts" value="3"/>
+                <simple name="java:jboss/naming/loginIntervalInMins" value="3"/>
+                <simple name="java:/url/RataBase" value="http://10.107.27.38:8081/RatabaseWS/RatabaseService" type="java.net.URL"/>
+                <simple name="java:/url/EngageOne" value="http://10.107.27.46:8080/EngageOneWS/DeliveryService" type="java.net.URL"/>
+                <simple name="java:/jndi/engageOneDomainName" value="StarrForms" type="java.lang.String"/>
+                <simple name="java:/file/baseProperties" value="file:///${pw.external.dir}/AM/base.properties" type="java.net.URL"/>
+                <simple name="java:/file/customProperties" value="file:///${pw.external.dir}/AM/custom.properties" type="java.net.URL"/>
+                <simple name="java:/file/loggingProperties" value="file:///${pw.external.dir}/AM/customLogging.xml" type="java.net.URL"/>
+                <simple name="java:jboss/naming/serverURL" value="http://10.107.27.38:8080/AMPolicyWriter/AMEntryPoint?pageCode=SEARCH" type="java.lang.String"/>
+                <simple name="java:jboss/naming/paramsToURL" value="&amp;theme=adaptik-base&amp;appMode=standalone&amp;app=Select"/>
+                <simple name="java:/url/getUserList" value="http://${pw.host.name}:${pw.host.port}/UserListWS/UserListServiceImpl" type="java.net.URL"/>
+                <simple name="java:/url/CGIRatingURI" value="http://${pw.host.name}:${pw.host.port}/RatabaseWS/GetRate" type="java.net.URL"/>
+                <simple name="java:/url/pdPropertiesDirectory" value="file:///${pw.external.dir}/PD/properties/pd" type="java.net.URL"/>
+                <simple name="java:/file/pdLoggingProperties" value="file:///${pw.external.dir}/PD/customLogging.xml" type="java.net.URL"/>
+                <simple name="java:/file/tpLoggingProperties" value="file:///${pw.external.dir}/PWTestPortal/customLogging.properties" type="java.net.URL"/>
+                <simple name="java:/file/twsLoggingProperties" value="file:///${pw.external.dir}/PWTestWebservices/customLogging.properties" type="java.net.URL"/>
+                <simple name="java:/jndi/downstreamUserid" value="EfDojbmootBcmSgigOD5w3jpBfwMgrhUm4csQbnX7UALLbjqbX2d+ecgegqhiWnI6eGEdUnh0BxDgHoW09DmQg==" type="java.lang.String"/>
+                <simple name="java:/jndi/downstreamPassword" value="n2ADzEGlHIuz+U04m8oYfOhLpVY72vgbjqdeZhqfXkg=" type="java.lang.String"/>
+                <simple name="java:jboss/naming/openLDAProledn" value="y1ck++26YeOeztUFqnGzwvJ3p3uHWu0/agDW43fPFpyNG2AtykwhloOuY97sKI6N"/>
+                <simple name="java:jboss/naming/openLDAPsystemdn" value="50LVtIO78kB83Xr2XbVXtyhhWVTquSnVENTLAzc7PKpWOnNi5aj6dqBF3LmYrwEDBK2efo8MNVazNARJ3asxNw=="/>
+                <simple name="java:/url/PBaddressScrubber" value="https://amer.spectrum.precisely.com/soap/ValidateAddress" type="java.net.URL"/>
+                <simple name="java:/strings/cryptoAES" value="CGICGICGICGICGI1" type="java.lang.String"/>
+                <simple name="java:/url/alfrescoMicrosite" value="http://10.55.102.12:8464/_Documents/GeneralDocumentation.aspx?" type="java.net.URL"/>
+                <simple name="java:/url/alfrescoService" value="https://starrenterpriseservicesuat.azurewebsites.net/api/ThirdParty/CreateStarr360SubmissionNoteAndDocument" type="java.net.URL"/>
+                <simple name="java:/url/alfrescoTokenService" value="https://login.microsoftonline.com/8b40543b-2d94-469f-b572-db1ce7370077/oauth2/token" type="java.net.URL"/>
+                <simple name="java:/jndi/alfrescoTokenResource" value="http%3A%2F%2FStarr360API%2F" type="java.lang.String"/>
+                <simple name="java:/jndi/alfrescoTokenClientId" value="7a233510-56bb-4f3e-ba91-ffb00683ccd1" type="java.lang.String"/>
+                <simple name="java:/jndi/alfrescoTokenClientSecret" value="CzmnB6io1FfpCmwjGUHJXYxGoGs0ZDlreLJj%2Ftu%2BaUw%3D" type="java.lang.String"/>
+                <simple name="java:/url/policyApp" value="http://${pw.host.name}:${pw.host.port}/AMPolicyWriter" type="java.net.URL"/>
+                <simple name="java:/url/productDesignerApp" value="http://${pw.host.name}:${pw.host.port}/PDPolicyWriter" type="java.net.URL"/>
+                <simple name="java:/url/PWPolicyService" value="http://${pw.host.name}:${pw.host.port}/AMPolicyWriter/services/PWPolicyService" type="java.net.URL"/>
+                <simple name="java:/file/loggingPWTestPortalProperties" value="file:///${pw.external.dir}/PWTestPortal/customLogging.xml" type="java.net.URL"/>
+                <simple name="java:/file/loggingPWTestWSProperties" value="file:///${pw.external.dir}/PWTestWebservices/customLogging.xml" type="java.net.URL"/>
+                <simple name="java:/file/batchLogging" value="file:///${pw.external.dir}/PWBatch/batchLogging.xml" type="java.net.URL"/>
+                <simple name="java:/url/batchLogsPath" value="file:///${host.log.directory}" type="java.net.URL"/>
+                <simple name="java:/url/melFileXSLJNDI" value="file:///${pw.external.dir}/PWBatch" type="java.net.URL"/>
+                <simple name="java:/file/batchProperties" value="file:///${pw.external.dir}/PWBatch/batch.properties" type="java.net.URL"/>
+                <simple name="java:/string/policyImportLocation" value="file:///${pw.bulk.dir}/*.xml" type="java.lang.String"/>
+                <simple name="java:/url/xslFileLocation" value="file:///${pw.external.dir}/PWBatch" type="java.net.URL"/>
+                <simple name="java:/string/system_user" value="systemUser" type="java.lang.String"/>
+                <simple name="java:/url/DocVentiveURL" value="https://adaptik-ghostdraft-api-qa.starr.com/publishprintservice.asmx" type="java.net.URL"/>
+                <simple name="java:/jndi/activePrintEngine" value="GHOSTDRAFT" type="java.lang.String"/>
+                <simple name="java:/jndi/DocVentiveLibrary" value="starr" type="java.lang.String"/>
+                <simple name="java:/string/readonly_user" value="readOnlyUser" type="java.lang.String"/>
+            </bindings>
+            <remote-naming/>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:pojo:1.0"/>
+        <subsystem xmlns="urn:jboss:domain:remoting:1.2">
+            <connector name="remoting-connector" socket-binding="remoting" security-realm="ApplicationRealm"/>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:resource-adapters:1.1"/>
+        <subsystem xmlns="urn:jboss:domain:sar:1.0"/>
+        <subsystem xmlns="urn:jboss:domain:security:1.2">
+            <security-domains>
+                <security-domain name="other" cache-type="default">
+                    <authentication>
+                        <login-module code="Remoting" flag="optional">
+                            <module-option name="password-stacking" value="useFirstPass"/>
+                        </login-module>
+                        <login-module code="RealmDirect" flag="required">
+                            <module-option name="password-stacking" value="useFirstPass"/>
+                        </login-module>
+                    </authentication>
+                </security-domain>
+                <security-domain name="jboss-web-policy" cache-type="default">
+                    <authorization>
+                        <policy-module code="Delegating" flag="required"/>
+                    </authorization>
+                </security-domain>
+                <security-domain name="jboss-ejb-policy" cache-type="default">
+                    <authorization>
+                        <policy-module code="Delegating" flag="required"/>
+                    </authorization>
+                </security-domain>
+            </security-domains>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:threads:1.1"/>
+        <subsystem xmlns="urn:jboss:domain:transactions:1.5">
+            <core-environment>
+                <process-id>
+                    <uuid/>
+                </process-id>
+            </core-environment>
+            <recovery-environment socket-binding="txn-recovery-environment" status-socket-binding="txn-status-manager"/>
+            <coordinator-environment default-timeout="300"/>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:web:2.2" default-virtual-server="default-host" native="false">
+            <connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
+            <virtual-server name="default-host" enable-welcome-root="true">
+                <alias name="localhost"/>
+                <alias name="example.com"/>
+            </virtual-server>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:webservices:1.2">
+            <modify-wsdl-address>true</modify-wsdl-address>
+            <wsdl-host>${jboss.bind.address:10.107.27.38}</wsdl-host>
+            <endpoint-config name="Standard-Endpoint-Config"/>
+            <endpoint-config name="Recording-Endpoint-Config">
+                <pre-handler-chain name="recording-handlers" protocol-bindings="##SOAP11_HTTP ##SOAP11_HTTP_MTOM ##SOAP12_HTTP ##SOAP12_HTTP_MTOM">
+                    <handler name="RecordingHandler" class="org.jboss.ws.common.invocation.RecordingServerHandler"/>
+                </pre-handler-chain>
+            </endpoint-config>
+            <client-config name="Standard-Client-Config"/>
+        </subsystem>
+        <subsystem xmlns="urn:jboss:domain:weld:1.0"/>
+    </profile>
+
+    <interfaces>
+        <interface name="management">
+            <inet-address value="${jboss.bind.address.management:10.107.27.38}"/>
+        </interface>
+        <interface name="public">
+            <inet-address value="${jboss.bind.address:0.0.0.0}"/>
+        </interface>
+        <interface name="unsecure">
+            <inet-address value="${jboss.bind.address.unsecure:10.107.27.38}"/>
+        </interface>
+    </interfaces>
+
+    <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
+        <socket-binding name="management-native" interface="management" port="${jboss.management.native.port:9999}"/>
+        <socket-binding name="management-http" interface="management" port="${jboss.management.http.port:8090}"/>
+        <socket-binding name="management-https" interface="management" port="${jboss.management.https.port:9443}"/>
+        <socket-binding name="ajp" port="8009"/>
+        <socket-binding name="http" port="8080"/>
+        <socket-binding name="https" port="8443"/>
+        <socket-binding name="remoting" port="4447"/>
+        <socket-binding name="txn-recovery-environment" port="4712"/>
+        <socket-binding name="txn-status-manager" port="4713"/>
+        <outbound-socket-binding name="mail-smtp">
+            <remote-destination host="localhost" port="25"/>
+        </outbound-socket-binding>
+    </socket-binding-group>
+
+</server>
